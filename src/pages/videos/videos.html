@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Videos > {{selectedCategory}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let card of cards">
+    <ion-item>
+      <h2>{{card.title}}</h2>
+      <p>{{card.category}}</p>
+    </ion-item>
+    <img [src]="'https://img.youtube.com/vi/'+card.youtubeId+'/maxresdefault.jpg'">
+    <ion-card-content>
+      <p>by {{card.by}}</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-left>
+        <ion-icon name='thumbs-up'></ion-icon>
+        99 Likes
+      </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-left>
+        <ion-icon name='text'></ion-icon>
+        42 Comments
+      </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          {{card.timestamp}}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

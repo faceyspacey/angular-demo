@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Categories</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let card of cards" (click)="selectCategory(card)">
+    <img [src]="card.imageUrl" />
+    <div class="card-subtitle">{{card.subtitle}}</div>
+  </ion-card>
+</ion-content>
+
